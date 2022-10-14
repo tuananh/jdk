@@ -1,0 +1,35 @@
+package:
+  name: jre17
+  version: 17
+  epoch: 0
+  description: "Adoptium Java JDK"
+  target-architecture:
+    - x86_64
+  copyright:
+    - paths:
+      - "*"
+      attestation: |
+      license: GPL-2.0-classpath-exception
+  dependencies:
+    runtime:
+      - musl-dev
+      - zlib
+
+environment:
+  contents:
+    repositories:
+      - https://dl-cdn.alpinelinux.org/alpine/edge/main
+    packages:
+      - alpine-baselayout-data
+      - busybox
+      - ca-certificates-bundle
+      - musl-dev
+
+pipeline:
+  - uses: fetch
+    with:
+      uri: https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.4.1%2B1/OpenJDK17U-jre_x64_alpine-linux_hotspot_17.0.4.1_1.tar.gz
+      expected-sha256: cd0300449a26b3141e313f6ab55b20edfa4b289dc44a7a3989fa2c29152bf7fb
+  - name: 'Copy paths'
+    runs: |
+      cp --parents -r * ${{targets.destdir}}/usr/
