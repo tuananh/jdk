@@ -4,7 +4,7 @@
 Note: Do NOT edit directly, this file was generated using https://github.com/chainguard-images/readme-generator
 -->
 
-[![CI status](https://github.com/chainguard-images/jdk/actions/workflows/release.yaml/badge.svg)](https://github.com/chainguard-images/jdk/actions/workflows/release.yaml)
+[![CI status](https://github.com/tuananh/jdk/actions/workflows/release.yaml/badge.svg)](https://github.com/tuananh/jdk/actions/workflows/release.yaml)
 
 WORK IN PROGRESS
 
